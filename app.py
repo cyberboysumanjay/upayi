@@ -35,6 +35,7 @@ def telegraph(filename):
 
 def create_qr(id):
     upi_id = id
+    save_dir = tempfile.gettempdir()
     url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
     version, level, qr_name = myqr.run(
         url,
@@ -45,7 +46,7 @@ def create_qr(id):
         contrast=1.0,
         brightness=1.0,
         save_name=id+"_qr.png",
-        save_dir=tempfile.gettempdir()
+        save_dir=save_dir
     )
     link = telegraph(save_dir+"/"+id+"_qr.png")
     return link
