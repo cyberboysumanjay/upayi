@@ -1,0 +1,41 @@
+.bhim {
+    display: block;
+    margin: 20px 0 10px 0;
+}
+
+.display-id {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.pay-text {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.qr {
+    max-width: 400px;
+    max-height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.card-content {
+    background: #e0ffff;
+}
+
+.create-text {
+    font-size: 18px;
+}
+
+.create {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
