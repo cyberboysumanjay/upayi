@@ -5,6 +5,7 @@ import os
 from flask import Flask, request, render_template, jsonify
 from MyQR import myqr
 import requests
+import tempfile
 
 
 # Support for gomix's 'front-end' and 'back-end' UI.
@@ -30,6 +31,8 @@ def telegraph(filename):
         os.remove(filename)
 
 def create_qr(id):
+    dir = tempfile.gettempdir()
+    print(dir)
     upi_id = id
     url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
     version, level, qr_name = myqr.run(
@@ -41,9 +44,9 @@ def create_qr(id):
         contrast=1.0,
         brightness=1.0,
         save_name=id+"_qr.png",
-        save_dir=os.getcwd()
+        save_dir = dir
     )
-    link = telegraph(id+"_qr.png")
+    link = telegraph(dir+'/'+id+"_qr.png")
     return link
 
 @app.route('/<id>')
