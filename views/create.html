@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Coded by Sumanjay @cyberboysumanjay on 5th August 2020 -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Tags -->
+    <meta name="author" content="Sumanjay">
+    <meta name="description" content="Create Payment Link of your UPI ID!">
+
+    <link rel="icon" href="https://telegra.ph/file/2f094c81af60c83f28f84.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <title>UPI Link</title>
+</head>
+
+<body>
+    <div class="card">
+        <h2 class="create-name">Create shareable UPI Payment links!</h2>
+        <div class="create">
+
+            <img width=360px; height=360px; src="https://raw.githubusercontent.com/cyberboysumanjay/web/master/features.gif" alt="Features" srcset="">
+        </div>
+
+        <p class="create">Just add your UPI ID here<br><b>https://upayi.me/&lt;your-upi-id&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
+        <div class="actions">
+            <div class="pay-btn">
+                <input type="text" placeholder="Enter your UPI ID" id="upiid">
+                <input type="text" placeholder="Get your UPI Link" id="upilink" disabled>
+                <button onclick=getLink()>
+              <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
+            </button>
+                <br>
+            </div>
+        </div>
+
+        <div class="desc link"> <a href="https://github.com/cyberboysumanjay">Made with <span class="love">❤️</span> by Sumanjay</a></div>
+
+    </div>
+
+    <script>
+        var upiid = document.getElementById("upiid");
+        var upilink = document.getElementById("upilink");
+
+        function getLink() {
+            upilink.value = "https://upayi.me/" + upiid.value;
+            navigator.clipboard.writeText(upilink.value);
+            var copyText = document.getElementById("upilink");
+            var tooltip = document.getElementById("myTooltip");
+            tooltip.innerHTML = "Copied to Clipboard!";
+
+        }
+    </script>
+</body>
+
+</html>

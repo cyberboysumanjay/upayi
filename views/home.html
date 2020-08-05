@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Coded by Sumanjay @cyberboysumanjay on 5th August 2020 -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Tags -->
+    <meta name="author" content="Sumanjay">
+    <meta name="description" content="Create Payment Link of your UPI ID!">
+    <link rel="icon" href="https://telegra.ph/file/2f094c81af60c83f28f84.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <title>UPI Link</title>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="banner">
+            <img height=360px; src="{{ qr }}">
+        </div>
+        <h2 class="name animate__animated animate__tada">Paying to {{ id }}</h2>
+        <div class="title">Secure and instant payments powered by
+            <br><br>
+            <img height="36px" src="https://telegra.ph/file/03c4581ebd2a0e21972de.png">
+            <img height="36px" src="https://telegra.ph/file/e290ab4d1dbf1ae1dab10.png">
+
+        </div>
+
+        <div class="actions">
+            <div class="pay-btn">
+                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR"> <button>Pay Now</button></a>
+                <br><br>
+                <a href="/"> <button>Create your UPI Link</button></a>
+                <br>
+            </div>
+        </div>
+
+        <div class="desc link"> <a href="https://github.com/cyberboysumanjay">Made with <span class="love">❤️</span> by Sumanjay</a></div>
+
+    </div>
+
+</body>
+
+</html>

@@ -56,15 +56,16 @@ def payment(id):
     if '@' in id:
         base_url = "https://upayi.me/"
         """Displays the QR and Payment Info."""
-        return render_template('index.html',id=id,qr=create_qr(id),base_url=base_url)
+        return render_template('home.html',id=id,qr=create_qr(id))
     else:
         return "Invalid UPI ID"
     
+
 @app.route('/')
 def homepage():
-    """Displays the homepage."""
-    id='sumanjay@pnb'
-    return render_template('index.html',id=id,qr=create_qr(id),base_url="https://upayi.me/")
+    #id='sumanjay@pnb'
+    return render_template('create.html')
     
 if __name__ == '__main__':
+    app.debug = True
     app.run(host='0.0.0.0',port=5000,use_reloader=True)
