@@ -1,4 +1,4 @@
 Flask
 gunicorn
 requests
-myqr
+git+git://github.com/cyberboysumanjay/qrcode
