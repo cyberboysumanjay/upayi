@@ -28,7 +28,7 @@
         <div class="actions">
             <div class="pay-btn">
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
-                <input type="text" placeholder="Get your UPI Link" id="upilink" disabled>
+                <input type="text" placeholder="Get your UPI Link" id="upilink" hidden disabled>
                 <button onclick=getLink()>
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
                 </button>
@@ -54,11 +54,11 @@
         function getLink() {
             if (upiid.value.indexOf("@") != -1) {
                 upilink.value = "https://upayi.me/" + upiid.value;
+                upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");
                 tooltip.innerHTML = "Copied to Clipboard!";
             } else {
-                upilink.value = "Ruko Zara, Sabar Karo";
                 tooltip.innerHTML = "Invalid UPI ID Entered";
             }
         }
