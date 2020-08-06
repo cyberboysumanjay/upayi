@@ -19,11 +19,10 @@
 
 <body>
     <div class="card">
-        <h2 class="create-name">Create shareable UPI Payment links!</h2>
-        <div class="create">
-
-            <img width=360px; height=360px; src="https://raw.githubusercontent.com/cyberboysumanjay/web/master/features.gif" alt="Features" srcset="">
+        <div class="banner2">
+            <img height=180px; src="https://telegra.ph/file/2f094c81af60c83f28f84.png">
         </div>
+        <h2 class="create-name">Create shareable UPI Payment links!</h2>
 
         <p class="create">Just add your UPI ID here<br><b>https://upayi.me/&lt;your-upi-id&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
         <div class="actions">
@@ -31,8 +30,14 @@
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
                 <input type="text" placeholder="Get your UPI Link" id="upilink" disabled>
                 <button onclick=getLink()>
-              <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
-            </button>
+                    <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
+                </button>
+                <br><br>
+                <a href="https://upayi.me/sumanjay@pnb">
+                    <button>    
+                        <span>Donate</span>
+                    </button>
+                </a>
                 <br>
             </div>
         </div>
@@ -44,14 +49,18 @@
     <script>
         var upiid = document.getElementById("upiid");
         var upilink = document.getElementById("upilink");
+        var tooltip = document.getElementById("myTooltip");
 
         function getLink() {
-            upilink.value = "https://upayi.me/" + upiid.value;
-            navigator.clipboard.writeText(upilink.value);
-            var copyText = document.getElementById("upilink");
-            var tooltip = document.getElementById("myTooltip");
-            tooltip.innerHTML = "Copied to Clipboard!";
-
+            if (upiid.value.indexOf("@") != -1) {
+                upilink.value = "https://upayi.me/" + upiid.value;
+                navigator.clipboard.writeText(upilink.value);
+                var copyText = document.getElementById("upilink");
+                tooltip.innerHTML = "Copied to Clipboard!";
+            } else {
+                upilink.value = "Ruko Zara, Sabar Karo";
+                tooltip.innerHTML = "Invalid UPI ID Entered";
+            }
         }
     </script>
 </body>

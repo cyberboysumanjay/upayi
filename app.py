@@ -58,7 +58,7 @@ def payment(id):
         """Displays the QR and Payment Info."""
         return render_template('home.html',id=id,qr=create_qr(id))
     else:
-        return "Invalid UPI ID"
+        return render_template("create.html")
     
 
 @app.route('/')
