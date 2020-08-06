@@ -54,18 +54,19 @@ def create_qr(id):
 @app.route('/<id>')
 def payment(id):
     if '@' in id:
-        base_url = "https://upayi.me/"
         """Displays the QR and Payment Info."""
-        return render_template('home.html',id=id,qr=create_qr(id))
+        qr = create_qr(id)
+        if qr:
+            return render_template('home.html',id=id,qr=create_qr(id))
+        else:
+            return "Something went wrong!"
     else:
         return render_template("create.html")
     
 
 @app.route('/')
 def homepage():
-    #id='sumanjay@pnb'
     return render_template('create.html')
     
 if __name__ == '__main__':
-    app.debug = True
     app.run(host='0.0.0.0',port=5000,use_reloader=True)
