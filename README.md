@@ -9,21 +9,22 @@
 ---
 <div align="center">
   <img src="https://telegra.ph/file/2f094c81af60c83f28f84.png" />
-  <h2> Features </h2>
+  <h2><b>Features</b></h2>
+  <p style="font-size:20px">
+  100% Free :heart_eyes:<br>
+  100% Secure :lock:<br>
+  Scan and Pay Support :mag_right:<br>
+  No Hidden Charges :no_entry_sign:<br>
+  No Data Storage :tada:<br>
+  Simple Interface :boom:<br>
+  Supports all UPI Apps :heavy_check_mark:<br>
 
-  #### - 100% Free :heart_eyes:
-  #### - 100% Secure :lock:
-  #### - Scan and Pay Support :mag_right:
-  #### - No Hidden Charges :no_entry_sign:
-  #### - No Data Storage :tada:
-  #### - Simple Interface :boom:
-  #### - Supports all UPI Apps :heavy_check_mark:
   <br>
   (Some of them are shown :point_down: )
 
   ![Some UPI Apps](https://telegra.ph/file/7d64009e34ffb8c246b87.png)
 
-  ##### Secure :lock: and Instant :zap: Payments Powered :muscle: By
+  #### Secure :lock: and Instant :zap: Payments Powered :muscle: By
 
 
   ![BHIM](https://telegra.ph/file/03c4581ebd2a0e21972de.png) ![UPI](https://telegra.ph/file/e290ab4d1dbf1ae1dab10.png)
@@ -31,11 +32,11 @@
 
   ![Digital-India](https://telegra.ph/file/7810d7fa8f7d31a55164f.png)
 
-</div>
+
 
 -------
 
-## Donate
+## **Donate**
 
 #### If you wish you can donate to me using my [UPI Link](https://upayi.me/sumanjay@pnb) :wink:
 #### You can use the above link and donate any amount you wish to test this service :stuck_out_tongue:
@@ -43,8 +44,10 @@
 ## **Note**
 
 #### **This service is completely free to use.**
-#### Donating doesn't unlock any feature and it's completely optional. It'll help me in covering domain charges (Currently I got it from a Student Pack :stuck_out_tongue_winking_eye:)
+#### Donating doesn't unlock any feature and it's completely optional.<br>It'll help me in covering domain charges<br>(Currently I got it from a Student Pack :stuck_out_tongue_winking_eye:)
 #### Forking this project and **changing author name won't make you developer**
-
 ---
 ### Made with :heart: by [Sumanjay](https://cyberboysumanjay.github.io)
+</div>
+
+---
