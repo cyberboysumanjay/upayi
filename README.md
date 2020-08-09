@@ -15,6 +15,7 @@
   100% Secure :lock:<br>
   Scan and Pay Support :mag_right:<br>
   No Hidden Charges :no_entry_sign:<br>
+  Set Fixed Amount :dollar:<br>
   No Data Storage :tada:<br>
   Simple Interface :boom:<br>
   Supports all UPI Apps :heavy_check_mark:<br>
