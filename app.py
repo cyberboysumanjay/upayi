@@ -67,6 +67,22 @@ def payment(id):
 @app.route('/')
 def homepage():
     return render_template('create.html')
-    
+
+@app.route('/<id>/<amount>')
+def amount_payment(id,amount):
+    if '@' in id:
+        """Displays the QR and Payment Info."""
+        qr = create_qr(id)
+        try:
+            amount = round(float(amount),2)
+        except Exception:
+            amount = None
+        if qr:
+            return render_template('home.html',id=id,qr=create_qr(id),amount=amount)
+        else:
+            return "Something went wrong!"
+    else:
+        return render_template("create.html")
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000,use_reloader=True)
