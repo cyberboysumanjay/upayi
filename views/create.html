@@ -40,10 +40,11 @@
         </div>
         <h2 class="create-name">Create shareable UPI Payment links!</h2>
 
-        <p class="create">Just add your UPI ID here<br><b>https://upayi.me/&lt;your-upi-id&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
+        <p class="create">Just add your UPI ID here<br><b>https://upayi.me/&lt;your-upi-id&gt;/&lt;amount&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
         <div class="actions">
             <div class="pay-btn">
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
+                <input type='number' step='1.0' placeholder="Enter Amount (Optional)" id="amountid">
                 <input type="text" placeholder="Get your UPI Link" id="upilink" hidden disabled>
                 <button onclick=getLink()>
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
@@ -64,12 +65,20 @@
 
     <script>
         var upiid = document.getElementById("upiid");
+        var amountid = document.getElementById("amountid");
         var upilink = document.getElementById("upilink");
         var tooltip = document.getElementById("myTooltip");
 
         function getLink() {
             if (upiid.value.indexOf("@") != -1) {
-                upilink.value = "https://upayi.me/" + upiid.value;
+                var amount = "";
+                console.log(amountid.value);
+                console.log(amountid.value.length);
+                console.log(typeof(amountid.value))
+                if (isNumeric(amountid.value)) {
+                    amount = "/" + amountid.value;
+                }
+                upilink.value = "https://upayi.me/" + upiid.value + amount;
                 upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");
@@ -77,6 +86,10 @@
             } else {
                 tooltip.innerHTML = "Invalid UPI ID Entered";
             }
+        }
+
+        function isNumeric(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
         }
     </script>
 </body>

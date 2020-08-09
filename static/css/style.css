@@ -173,7 +173,7 @@ a:visited {
     margin-top: 2rem;
 }
 
-input[type=text] {
+input {
     width: 80%;
     border: 2px solid #aaa;
     border-radius: 4px;
@@ -186,7 +186,7 @@ input[type=text] {
     text-align: center;
 }
 
-input[type=text]:focus {
+input:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
 }
