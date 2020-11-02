@@ -38,7 +38,7 @@
 
 <h2><b>Donate</b></h2>
 <p style="font-size:20px">
-If you wish you can donate to me using my <a href="https://upayi.me/sumanjay@pnb">UPI Link</a> :wink:<br>
+If you wish you can donate to me using my <a href="https://upayi.me/sumanjay@ybl">UPI Link</a> :wink:<br>
 You can use the above link and donate any amount you wish to test this service :stuck_out_tongue:
 </p>
 
