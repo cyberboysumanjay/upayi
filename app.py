@@ -33,10 +33,19 @@ def telegraph(filename):
         except:
             pass
 
-def create_qr(id):
+def create_qr(id,amount=None):
     upi_id = id
     save_dir = tempfile.gettempdir()
-    url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
+    if amount:
+        try:
+            amount = round(float(amount),2)
+            url = f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR&am={amount}"
+        except Exception:
+            amount = None
+            url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
+    else:
+        url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
+    
     version, level, qr_name = myqr.run(
         url,
         version=1,
@@ -72,13 +81,13 @@ def homepage():
 def amount_payment(id,amount):
     if '@' in id:
         """Displays the QR and Payment Info."""
-        qr = create_qr(id)
+        qr = create_qr(id,amount)
         try:
             amount = round(float(amount),2)
         except Exception:
             amount = None
         if qr:
-            return render_template('home.html',id=id,qr=create_qr(id),amount=amount)
+            return render_template('home.html',id=id,qr=create_qr(id,amount),amount=amount)
         else:
             return "Something went wrong!"
     else:
