@@ -40,7 +40,7 @@
         </div>
         <h2 class="create-name">Create shareable UPI Payment links!</h2>
 
-        <p class="create">Just add your UPI ID here<br><b>https://upayi.me/&lt;your-upi-id&gt;/&lt;amount&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
+        <p class="create">Just add your UPI ID here<br><b>https://upayi.ml/&lt;your-upi-id&gt;/&lt;amount&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
         <div class="actions">
             <div class="pay-btn">
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
@@ -50,7 +50,7 @@
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
                 </button>
                 <br><br>
-                <a href="https://upayi.me/upayi@icici">
+                <a href="https://upayi.ml/8863911141@okbizaxis">
                     <button>    
                         <span>Donate</span>
                     </button>
@@ -78,7 +78,7 @@
                 if (isNumeric(amountid.value)) {
                     amount = "/" + amountid.value;
                 }
-                upilink.value = "https://upayi.me/" + upiid.value + amount;
+                upilink.value = "https://upayi.ml/" + upiid.value + amount;
                 upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");

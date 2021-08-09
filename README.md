@@ -1,4 +1,4 @@
-# [upayi.me](https://upayi.me/)
+# [upayi.ml](https://upayi.ml/)
 ---
 ### Show some :heart: and :star: the repo to support the project
 
@@ -38,7 +38,7 @@
 
 <h2><b>Donate</b></h2>
 <p style="font-size:20px">
-If you wish you can donate to me using my <a href="https://upayi.me/sumanjay7@ybl">UPI Link</a> :wink:<br>
+If you wish you can donate to me using my <a href="https://upayi.ml/8863911141@okbizaxis">UPI Link</a> :wink:<br>
 You can use the above link and donate any amount you wish to test this service :stuck_out_tongue:
 </p>
 
@@ -53,7 +53,7 @@ Forking this project and <b>changing author name won't make you developer</b>
 
 ---
 
-<h4><a href="https://upayi.me/">Click here to create your UPI link</a></h4>
+<h4><a href="https://upayi.ml/">Click here to create your UPI link</a></h4>
 <h3>Made with :heart: by <a href="https://cyberboysumanjay.github.io" alt="Sumanjay">Sumanjay</a>
 </div>
 
