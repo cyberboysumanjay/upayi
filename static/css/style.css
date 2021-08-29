@@ -7,7 +7,10 @@ body {
     background-position: center;
     background-attachment: fixed;
     margin: 0;
-    padding: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
     display: grid;
     place-items: center;
     box-sizing: border-box;
@@ -142,7 +145,7 @@ body {
 
 .card .desc {
     text-align: center;
-    padding: 0 2rem 2rem;
+    padding: 0 2rem 1.5rem;
     order: 100;
 }
 
@@ -170,7 +173,6 @@ a:visited {
 .create-name {
     text-align: center;
     padding: 0 1rem 0rem;
-    margin-top: 2rem;
 }
 
 input {
