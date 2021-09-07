@@ -51,9 +51,9 @@
         <div class="actions">
             <div class="pay-btn">
                 {% if amount %}
-                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR&am={{ amount }}"> <button>Pay Now</button></a>
+                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR&am={{ amount }}&tn={{ remarks }}"> <button>Pay Now</button></a>
                 {% else %}
-                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR"> <button>Pay Now</button></a>
+                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR&tn={{ remarks }}"> <button>Pay Now</button></a>
                 {% endif %}
                 <br><br>
                 <a href="/"> <button>Create your UPI Link</button></a>

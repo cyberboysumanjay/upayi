@@ -45,12 +45,13 @@
             <div class="pay-btn">
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
                 <input type='number' step='1.0' placeholder="Enter Amount (Optional)" id="amountid">
+                <input type="text" placeholder="Enter your Remarks" id="upinote">
                 <input type="text" placeholder="Get your UPI Link" id="upilink" hidden disabled>
                 <button onclick=getLink()>
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
                 </button>
                 <br><br>
-                <a href="https://upayi.ml/8863911141@okbizaxis">
+                <a href="/8863911141@okbizaxis">
                     <button>    
                         <span>Donate</span>
                     </button>
@@ -78,7 +79,7 @@
                 if (isNumeric(amountid.value)) {
                     amount = "/" + amountid.value;
                 }
-                upilink.value = "https://upayi.ml/" + upiid.value + amount;
+                upilink.value = window.location.href + upiid.value + amount + "/" + upinote.value;
                 upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");

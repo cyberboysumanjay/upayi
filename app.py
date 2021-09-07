@@ -33,18 +33,20 @@ def telegraph(filename):
         except:
             pass
 
-def create_qr(id,amount=None):
+def create_qr(id,amount=None,remarks=None):
     upi_id = id
     save_dir = tempfile.gettempdir()
+    if remarks is None:
+        remarks = "Sent using https://upayi.ml"
     if amount:
         try:
             amount = round(float(amount),2)
-            url = f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR&am={amount}"
+            url = f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR&am={amount}&tn={remarks}"
         except Exception:
             amount = None
-            url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
+            url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR&tn={remarks}"
     else:
-        url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR"
+        url=f"upi://pay?pn=UPAYI&pa={upi_id}&cu=INR&tn={remarks}"
     
     version, level, qr_name = myqr.run(
         url,
@@ -77,17 +79,17 @@ def payment(id):
 def homepage():
     return render_template('create.html')
 
-@app.route('/<id>/<amount>')
-def amount_payment(id,amount):
+@app.route('/<id>/<amount>/<remarks>')
+def amount_payment(id,amount,remarks):
     if '@' in id:
         """Displays the QR and Payment Info."""
-        qr = create_qr(id,amount)
+        qr = create_qr(id,amount,remarks)
         try:
             amount = round(float(amount),2)
         except Exception:
             amount = None
         if qr:
-            return render_template('home.html',id=id,qr=create_qr(id,amount),amount=amount)
+            return render_template('home.html',id=id,qr=create_qr(id,amount,remarks),amount=amount,remarks=remarks)
         else:
             return "Something went wrong!"
     else:
