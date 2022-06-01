@@ -2,22 +2,30 @@
 # -*- coding: utf-8 -*-
 
 import os
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, send_file, render_template, Blueprint
 from MyQR import myqr
 import tempfile
-import shutil
-
 
 # Support for gomix's 'front-end' and 'back-end' UI.
-app = Flask(__name__, template_folder='views')
+app = Flask(__name__, template_folder='views', static_folder='/tmp/')
 
 # Set the app secret key from the secret environment variables.
 app.secret = os.environ.get('SECRET')
 
 
+@app.route('/qr/<id>/<amount>')
+def serve_qr(id, amount):
+    return send_file(create_qr(id, amount), mimetype='image/png')
+
+
+@app.route('/css')
+def serve_css():  # Workaround as static file is routed to tmp folder
+    return send_file('static/css/style.css', mimetype='text/css')
+
+
 def create_qr(id, amount=None):
     upi_id = id
-    save_dir = os.getcwd()  # tempfile.gettempdir()
+    save_dir = tempfile.gettempdir()
     if amount:
         try:
             amount = round(float(amount), 2)
@@ -39,23 +47,16 @@ def create_qr(id, amount=None):
         save_name=id+"_qr.png",
         save_dir=save_dir
     )
-    link = "/static/"+id+"_qr.png"
-    #destination = os.getcwd()+link
-    #shutil.copyfile(save_dir+"/"+id+"_qr.png", destination)
-    return link
+    return save_dir + "/" + id+"_qr.png"
 
 
 @app.route('/<id>')
 def payment(id):
     if '@' in id:
         """Displays the QR and Payment Info."""
-        qr = create_qr(id)
-        if qr:
-            return render_template('home.html', id=id, qr=create_qr(id))
-        else:
-            return "Something went wrong!"
+        return render_template('home.html', id=id, amount=None)
     else:
-        return render_template("create.html")
+        return render_template("create.html", id=id, amount=None)
 
 
 @app.route('/')
@@ -67,17 +68,13 @@ def homepage():
 def amount_payment(id, amount):
     if '@' in id:
         """Displays the QR and Payment Info."""
-        qr = create_qr(id, amount)
         try:
             amount = round(float(amount), 2)
         except Exception:
             amount = None
-        if qr:
-            return render_template('home.html', id=id, qr=create_qr(id, amount), amount=amount)
-        else:
-            return "Something went wrong!"
+        return render_template('home.html', id=id, amount=amount)
     else:
-        return render_template("create.html")
+        return render_template("create.html", id=id, amount=amount)
 
 
 if __name__ == '__main__':
