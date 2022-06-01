@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from flask import Flask, send_file, render_template, Blueprint
+from flask import Flask, send_file, render_template
 from MyQR import myqr
 import tempfile
 
