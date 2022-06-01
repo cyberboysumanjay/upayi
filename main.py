@@ -17,7 +17,7 @@ app.secret = os.environ.get('SECRET')
 
 def create_qr(id, amount=None):
     upi_id = id
-    save_dir = tempfile.gettempdir()
+    save_dir = os.getcwd()  # tempfile.gettempdir()
     if amount:
         try:
             amount = round(float(amount), 2)
@@ -40,8 +40,8 @@ def create_qr(id, amount=None):
         save_dir=save_dir
     )
     link = "/static/"+id+"_qr.png"
-    destination = os.getcwd()+link
-    shutil.copyfile(save_dir+"/"+id+"_qr.png", destination)
+    #destination = os.getcwd()+link
+    #shutil.copyfile(save_dir+"/"+id+"_qr.png", destination)
     return link
 
 
