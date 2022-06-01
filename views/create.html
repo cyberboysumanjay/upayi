@@ -12,7 +12,7 @@
     <meta name="description" content="Create Payment Link of your UPI ID!">
 
     <link rel="icon" href="https://telegra.ph/file/2f094c81af60c83f28f84.png" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <title>UPI Link</title>
 
@@ -40,7 +40,9 @@
         </div>
         <h2 class="create-name">Create shareable UPI Payment links!</h2>
 
-        <p class="create">Just add your UPI ID here<br><b>https://upayi.ml/&lt;your-upi-id&gt;/&lt;amount&gt;</b><br><br>Or,<br><b>Use our UPI Link Generator Tool</b></p>
+        <p class="create">Just add your UPI ID
+            here<br><b>https://upayi.ml/&lt;your-upi-id&gt;/&lt;amount&gt;</b><br><br>Or,<br><b>Use our UPI Link
+                Generator Tool</b></p>
         <div class="actions">
             <div class="pay-btn">
                 <input type="text" placeholder="Enter your UPI ID" id="upiid">
@@ -51,7 +53,7 @@
                 </button>
                 <br><br>
                 <a href="https://upayi.ml/8863911141@okbizaxis">
-                    <button>    
+                    <button>
                         <span>Donate</span>
                     </button>
                 </a>
@@ -59,7 +61,8 @@
             </div>
         </div>
 
-        <div class="desc link"> <a href="https://github.com/cyberboysumanjay/upayi">Made with <span class="love">❤️</span> by Sumanjay</a></div>
+        <div class="desc link"> <a href="https://github.com/cyberboysumanjay/upayi">Made with <span
+                    class="love">❤️</span> by Sumanjay</a></div>
 
     </div>
 
@@ -74,7 +77,7 @@
                 var amount = "";
                 console.log(amountid.value);
                 console.log(amountid.value.length);
-                console.log(typeof(amountid.value))
+                console.log(typeof (amountid.value))
                 if (isNumeric(amountid.value)) {
                     amount = "/" + amountid.value;
                 }
