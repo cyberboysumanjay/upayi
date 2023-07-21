@@ -36,7 +36,7 @@
 
     <div class="card">
         <div class="banner2">
-            <img height=180px; src="https://telegra.ph/file/2f094c81af60c83f28f84.png">
+            <img height=180px; src="https://i.imgur.com/NjZz7jJ.png">
         </div>
         <h2 class="create-name">Create shareable UPI Payment links!</h2>
 
@@ -52,7 +52,7 @@
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
                 </button>
                 <br><br>
-                <a href="https://upayi.ml/8863911141@okbizaxis">
+                <a href="/cc.9188639111412655@axisbank">
                     <button>
                         <span>Donate</span>
                     </button>
@@ -67,11 +67,13 @@
     </div>
 
     <script>
+        var baseUrl = window.location.protocol + "//" + window.location.host;
         var upiid = document.getElementById("upiid");
         var amountid = document.getElementById("amountid");
         var upilink = document.getElementById("upilink");
         var tooltip = document.getElementById("myTooltip");
-
+        var paragraph = document.getElementsByClassName("create")[0];
+        paragraph.innerHTML = paragraph.innerHTML.replace("https://upayi.ml", baseUrl);
         function getLink() {
             if (upiid.value.indexOf("@") != -1) {
                 var amount = "";
@@ -81,7 +83,7 @@
                 if (isNumeric(amountid.value)) {
                     amount = "/" + amountid.value;
                 }
-                upilink.value = "https://upayi.ml/" + upiid.value + amount;
+                upilink.value = baseUrl + "/" + upiid.value + amount;
                 upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");
